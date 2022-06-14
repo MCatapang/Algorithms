@@ -22,12 +22,6 @@ class BinarySearchTree {
         return current.data;
     }
 
-    /**
-     * Retrieves the smallest integer data from this tree.
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The smallest integer from this tree.
-     */
     minRecursive(current = this.root) { 
         if(current.left) {
             return this.minRecursive(current.left);
@@ -36,12 +30,6 @@ class BinarySearchTree {
         }
     }
 
-    /**
-     * Retrieves the largest integer data from this tree.
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The largest integer from this tree.
-     */
     max(current = this.root) { 
         while(current.right) {
             current = current.right;
@@ -49,12 +37,6 @@ class BinarySearchTree {
         return current.data;
     }
 
-    /**
-     * Retrieves the largest integer data from this tree.
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The largest integer from this tree.
-     */
     maxRecursive(current = this.root) { 
         if(current.right) {
             return this.maxRecursive(current.right);
