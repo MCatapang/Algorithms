@@ -49,7 +49,6 @@ class MinHeap {
             indexOfNum = indexOfParent;
             indexOfParent = Math.floor(indexOfNum/2);
         }
-        return this;
     }
 
     /**
@@ -74,12 +73,12 @@ class MinHeap {
 }
 
 const newHeap = new MinHeap();
-console.log(newHeap.insert(10));
-console.log(newHeap.insert(11));
-console.log(newHeap.insert(13));
-console.log(newHeap.insert(5));
-console.log(newHeap.insert(6));
-console.log(newHeap.insert(20));
-console.log(newHeap.insert(21));
-console.log(newHeap.insert(4));
+newHeap.insert(10);
+newHeap.insert(11);
+newHeap.insert(13);
+newHeap.insert(5);
+newHeap.insert(6);
+newHeap.insert(20);
+newHeap.insert(21);
+newHeap.insert(4);
 newHeap.printHorizontalTree();
