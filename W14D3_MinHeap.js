@@ -38,14 +38,16 @@ class MinHeap {
      */
     insert(num) { 
         this.heap.push(num);
-        let indexOfNum = Math.floor(this.heap.length-1);
-        let indexOfParent = Math.floor(indexOfNum/2);
-        while(indexOfParent >= 1) {
+        let indexOfNum = Math.floor(this.heap.length-1); // will be reassigned later
+        let indexOfParent = Math.floor(indexOfNum/2);   // will be reassigned later
+        while(indexOfParent >= 1 && this.heap[indexOfParent] > this.heap[indexOfNum]) {
             if(this.heap[indexOfNum] < this.heap[indexOfParent]) {
+                // 'swap logic' below
                 let holder = this.heap[indexOfNum];
                 this.heap[indexOfNum] = this.heap[indexOfParent];
                 this.heap[indexOfParent] = holder;
             }
+            // reassigning indices
             indexOfNum = indexOfParent;
             indexOfParent = Math.floor(indexOfNum/2);
         }
