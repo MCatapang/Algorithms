@@ -10,14 +10,6 @@ const expected3 = "a";
 const str4 = "bbcc";
 const expected4 = "b2c2";
 
-/* Pseudo-Code
-    - create a function that takes in a string
-    - deconstruct string into individual characters
-    - create a variable that represents each letter
-    - count instances of each letter
-    - integrate the letter and count back into a string
-*/
-
 function encode(charArr) {
     let arrMap = [];
     let index = -1;
@@ -40,9 +32,6 @@ function encode(charArr) {
 }
 
 // console.log(encode(str1));
-
-
-
 
 
 
