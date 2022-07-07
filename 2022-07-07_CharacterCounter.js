@@ -8,7 +8,7 @@ const str3 = "a";
 const expected3 = "a";
 
 const str4 = "bbcc";
-const expected4 = "bbcc";
+const expected4 = "b2c2";
 
 /* Pseudo-Code
     - create a function that takes in a string
@@ -18,30 +18,28 @@ const expected4 = "bbcc";
     - integrate the letter and count back into a string
 */
 
-function encode(str){
-    letterA = 0;
-    letterB = 0;
-    letterC = 0;
-    letterD = 0;
-    for(i=0; i<str.length; i++) {
-        if(str[i] == "a") {
-            letterA++
-        }
-        if(str[i] == "b") {
-            letterB++
-        }
-        if(str[i] == "c") {
-            letterC++
-        }
-        if(str[i] == "d") {
-            letterD++
+function encode(charArr) {
+    let arrMap = [];
+    let index = -1;
+    let output = "";
+
+    for(let i=0; i<charArr.length; i++) {
+        if(charArr[i] == charArr[i-1]) {
+            arrMap[index][1] += 1;
+        } else {
+            index++;
+            arrMap.push([charArr[i], 1]);
         }
     }
-    output = "a" + letterA + "b" + letterB + "c" + letterC + "d" + letterD
-    console.log(output);
+
+    for(const miniArr of arrMap) {
+        output += `${miniArr[0]}${miniArr[1]}`;
+    }
+
+    return output;
 }
 
-encode(str1)
+console.log(encode(str1));
 
 
 
