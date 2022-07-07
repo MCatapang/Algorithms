@@ -39,7 +39,7 @@ function encode(charArr) {
     return output;
 }
 
-console.log(encode(str1));
+// console.log(encode(str1));
 
 
 
@@ -62,4 +62,25 @@ const two_expected2 = "aaabbccccccccccccdddddddddd";
  *    after indicating how many times the character occurs.
  * @returns {string} The given str decoded / expanded.
  */
-function decodeStr(str) {}
+function decodeStr(str) {
+    let output = "";
+    let char = "";
+    let num = "";
+    for(let i=0; i<str.length+1; i++) {
+        let intChar = parseInt(str[i]);
+        if(isNaN(intChar) || intChar == null) {
+            if(i == 0) {
+                char = str[i]
+            } else {
+                output += char.repeat(num);
+                char = str[i]
+                num = "";
+            }
+        } else {
+            num += str[i];
+        }
+    }
+    return output;
+}
+
+console.log(decodeStr(two_str2));
